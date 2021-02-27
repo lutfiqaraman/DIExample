@@ -12,10 +12,7 @@ namespace DIExample
 
         public Salutation(IMessageWriter writer)
         {
-            if (writer == null)
-                throw new ArgumentNullException("writer");
-
-            this.writer = writer;
+            this.writer = writer ?? throw new ArgumentNullException("writer");
         }
 
         public void Exclaim()
